@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aari-world-model
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: digital-twin
+  namespace: aari-world-model
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: digital-twin
+  template:
+    metadata:
+      labels:
+        app: digital-twin
+    spec:
+      containers:
+      - name: world-model
+        image: aari-world-model:v1
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: digital-twin
+  namespace: aari-world-model
+spec:
+  selector:
+    app: digital-twin
+  ports:
+  - port: 8080
+    targetPort: 8080
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: digital-twin
+  namespace: aari-world-model
+spec:
+  to:
+    kind: Service
+    name: digital-twin
+  tls:
+    termination: edge

@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "datacenter": {
+      "command": "python3",
+      "args": ["mcp-servers/datacenter/server.py"],
+      "env": {"PYTHONPATH": "."}
+    },
+    "deployment": {
+      "command": "python3", 
+      "args": ["mcp-servers/deployment/server.py"]
+    },
+    "security": {
+      "command": "python3",
+      "args": ["mcp-servers/security/server.py"]
+    }
+  }
+}
