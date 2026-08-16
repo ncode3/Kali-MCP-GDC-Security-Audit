@@ -1,6 +1,6 @@
 # AARI World Model + GDC Security Audit
 
-> **Producer mindset. Code-first. No GUIs.**
+> Physics-based infrastructure modeling, deployment automation, and authorized security assessment.
 
 A physics-based infrastructure digital twin and security assessment toolkit for the **Garage Data Center (GDC)**. Built for AARI students to learn real infrastructure engineering through AI-native tooling.
 
@@ -8,7 +8,7 @@ A physics-based infrastructure digital twin and security assessment toolkit for 
 
 ## What This Is
 
-This repository contains three **MCP (Model Context Protocol) servers** that turn Claude Code into an infrastructure operator:
+This repository contains three **MCP (Model Context Protocol) servers** that expose infrastructure tools to compatible AI clients:
 
 | Server | What It Does |
 |--------|--------------|
@@ -206,7 +206,7 @@ docker build -t aari-world-model:v1 -f infra/Dockerfile .
 ### Deploy to OpenShift
 
 ```bash
-# Login to Dave's cluster
+# Log in to an OpenShift cluster you are authorized to operate
 oc login https://api.gdc.local:6443
 
 # Apply manifests
@@ -249,16 +249,17 @@ This project teaches:
 
 ---
 
-## The AARI Way
+## Learning Model
 
-> "The cloud is just someone else's computer. Stop renting. Start building."
+This project combines:
 
-This project exists because:
-- **AWS** won't teach you infrastructure
-- **Bootcamps** won't teach you physics
-- **Universities** won't teach you production
+- infrastructure physics and telemetry;
+- data pipelines and anomaly detection;
+- container deployment and operations;
+- authorized security assessment;
+- incident reporting and reproducible runbooks.
 
-AARI teaches all three.
+The objective is to help students connect theory to observable system behavior while operating within explicit security boundaries.
 
 ---
 
