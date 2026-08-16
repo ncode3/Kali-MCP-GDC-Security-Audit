@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 RUN groupadd -r aari && useradd -r -g aari aari
 WORKDIR /app
